@@ -51,7 +51,14 @@ document.addEventListener('DOMContentLoaded', () =>{
       platforms.forEach(platform => {
         platform.bottom -= 4;
         let visual = platform.visual;
-        visual.style.bottom = platform.bottom +'px'
+        visual.style.bottom = platform.bottom +'px';
+        if (platform.bottom < 10){
+          let firstPlatform = platform[0].visual;
+          firstPlatform.classList.remove('platform');
+          platforms.shift();
+          let newPlatform = new Platform(600);
+          platforms.push(newPlatform);
+        }
       })
     }
   }
@@ -129,7 +136,8 @@ document.addEventListener('DOMContentLoaded', () =>{
     isGoingRight = true;
     rightTimerId = setInterval(function (){
       if (doodlerLeftSpace <= 240){
-
+        doodlerLeftSpace += 5;
+        doodler.style.left = doodlerLeftSpace + 'px';
       }
     },30)
   }
@@ -140,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () =>{
       createDoodler();
       setInterval(movePlatforms, 30);
       jump();
+      document.addEventListener('keyup', control);
     }
   }
   start();

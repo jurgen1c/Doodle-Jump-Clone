@@ -1,4 +1,4 @@
-.grid { width: 400px; height: 600px; background: yellow; position: relative; }
+.grid { margin: 0 auto; width: 400px; height: 600px; background: yellow; position: relative; font-size: 5rem; }
 
 .doodler { width: 60px; height: 85px; background: red; position: absolute; }
 

@@ -1,8 +1,10 @@
 .grid{
+  margin: 0 auto;
   width: 400px;
   height: 600px;
   background: $doodle-color;
   position: relative;
+  font-size: 5rem;
 }
 
 .doodler{
